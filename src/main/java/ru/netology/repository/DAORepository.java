@@ -15,11 +15,9 @@ public class DAORepository {
     private EntityManager entityManager;
 
     public List<Person> getPersonsByCity(String city) {
-
-        List<Person> personList = entityManager.createQuery(
+        return entityManager.createQuery(
                 "select p from Person p where p.city_of_living = :city", Person.class)
-        .setParameter("city", city)
-        .getResultList();
-        return personList;
+                .setParameter("city", city)
+                .getResultList();
     }
 }
