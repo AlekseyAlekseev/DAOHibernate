@@ -30,8 +30,8 @@ public class Person {
 
     private String phone_number;
 
-
-    private String city_of_living;
+    @ManyToOne(optional = false)
+    private City city;
 
     @Override
     public String toString() {
@@ -41,7 +41,7 @@ public class Person {
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
                 ", phone_number='" + phone_number + '\'' +
-                ", city_of_living='" + city_of_living + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }
